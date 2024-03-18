@@ -18,7 +18,12 @@ describe('Authorization', () => {
         // Вводим неверный пароль
         cy.get('input[data-v-eaa6138e][autocomplete="current-password"]').type('invalid_password');
         // Нажимаем кнопку "Войти"
-        cy.get('.login-form__button button[type="submit"]').click({ force: true });
+        cy.log("Клик по кнопке 'Войти' ")
+        cy.get('.button__background-color-green').click()
+
+        cy.wait(1000)
+
+        cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
 
     });
 });

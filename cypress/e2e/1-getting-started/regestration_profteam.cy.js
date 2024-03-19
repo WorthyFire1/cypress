@@ -23,11 +23,10 @@ describe('Registration', () => {
         cy.get('input[data-v-eaa6138e][autocomplete="new-password"]').first().type('TestPassword123');
         cy.get('input[data-v-eaa6138e][autocomplete="new-password"]').last().type('TestPassword123');
 
-        cy.get('.registration-form__button button[type="submit"]:not([disabled])').click({ force: true });
+        cy.get('button[data-v-db1dcd8a]').first().click({ force: true });
+
 
         cy.get('div[data-v-a144256a]').should('not.exist');
     });
-
-
 });
 

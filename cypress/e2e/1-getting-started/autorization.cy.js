@@ -26,4 +26,8 @@ describe('Authorization', () => {
         cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
 
     });
+    it('Проверка блокировки кнопки "Войти" при отсутствии введенных данных', () => {
+        // Проверяем, что кнопка "Войти" заблокирована, когда нет введенных данных
+        cy.get('.button__background-color-green').should('be.disabled');
+    });
 });

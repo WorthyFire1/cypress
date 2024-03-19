@@ -30,4 +30,5 @@ describe('Authorization', () => {
         // Проверяем, что кнопка "Войти" заблокирована, когда нет введенных данных
         cy.get('.button__background-color-green').should('be.disabled');
     });
+
 });
